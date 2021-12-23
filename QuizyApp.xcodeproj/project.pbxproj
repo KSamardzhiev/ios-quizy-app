@@ -19,6 +19,7 @@
 		F858A13B2773C06A00D8DB97 /* QuizyAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A13A2773C06A00D8DB97 /* QuizyAppUITestsLaunchTests.swift */; };
 		F858A14827748FE300D8DB97 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A14727748FE300D8DB97 /* Question.swift */; };
 		F858A14D2774A11B00D8DB97 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A14C2774A11B00D8DB97 /* QuizBrain.swift */; };
+		F858A14F2774DEE100D8DB97 /* QuestionMulti.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858A14E2774DEE100D8DB97 /* QuestionMulti.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		F858A13A2773C06A00D8DB97 /* QuizyAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizyAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F858A14727748FE300D8DB97 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		F858A14C2774A11B00D8DB97 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		F858A14E2774DEE100D8DB97 /* QuestionMulti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionMulti.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				F858A14727748FE300D8DB97 /* Question.swift */,
 				F858A14C2774A11B00D8DB97 /* QuizBrain.swift */,
+				F858A14E2774DEE100D8DB97 /* QuestionMulti.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				F858A14D2774A11B00D8DB97 /* QuizBrain.swift in Sources */,
 				F858A1192773C06600D8DB97 /* ViewController.swift in Sources */,
 				F858A1152773C06500D8DB97 /* AppDelegate.swift in Sources */,
+				F858A14F2774DEE100D8DB97 /* QuestionMulti.swift in Sources */,
 				F858A1172773C06600D8DB97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,46 +23,74 @@
                                 <rect key="frame" x="10" y="44" width="394" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-0R-ehv">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is test question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-Cd-DrX">
-                                        <rect key="frame" x="0.0" y="72.5" width="394" height="575.5"/>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="72" width="394" height="561"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="30"/>
                                         <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Syd-zH-rvf">
-                                        <rect key="frame" x="0.0" y="658" width="394" height="120"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Syd-zH-rvf">
+                                        <rect key="frame" x="0.0" y="643" width="394" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qke-6J-vQA">
-                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wSA-nc-dHH">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="26"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="njB-ne-RHh"/>
+                                                    <constraint firstAttribute="height" constant="25" id="QAB-1N-p1l"/>
                                                 </constraints>
+                                                <segments>
+                                                    <segment title="One Choice"/>
+                                                    <segment title="Multi Choice"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="WHC-8m-XKX"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qke-6J-vQA">
+                                                <rect key="frame" x="0.0" y="45" width="394" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="njB-ne-RHh"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="gray" title="True" cornerStyle="capsule">
+                                                <buttonConfiguration key="configuration" style="gray" title="True">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                                    <color key="baseForegroundColor" red="0.85882352941176465" green="0.16078431372549018" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="baseForegroundColor" red="0.85882352939999995" green="0.16078431369999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfv-ia-f8E"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjp-Dz-VSi">
-                                                <rect key="frame" x="0.0" y="70" width="394" height="50"/>
+                                                <rect key="frame" x="0.0" y="100" width="394" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="LlT-3t-0oV"/>
+                                                    <constraint firstAttribute="height" constant="35" id="LlT-3t-0oV"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="False" cornerStyle="capsule">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                     <color key="baseForegroundColor" red="0.85882352941176465" green="0.16078431372549018" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCc-Ct-5QL"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaE-9h-N7v">
+                                                <rect key="frame" x="0.0" y="135" width="394" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="rEv-k6-D6E"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Third" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                                    <color key="baseForegroundColor" red="0.85882352939999995" green="0.16078431369999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SZZ-Dr-Nup"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -104,6 +132,7 @@
                         <outlet property="progressBar" destination="4fo-VZ-qb4" id="Ptf-mH-2MU"/>
                         <outlet property="questionLabel" destination="ZRD-Cd-DrX" id="b7m-Cc-ZHM"/>
                         <outlet property="scoreLabel" destination="DBP-0R-ehv" id="T40-d1-gj9"/>
+                        <outlet property="thirdButton" destination="XaE-9h-N7v" id="QTW-MX-0ud"/>
                         <outlet property="trueButton" destination="Qke-6J-vQA" id="dzG-1B-iix"/>
                     </connections>
                 </viewController>

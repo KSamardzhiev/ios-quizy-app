@@ -23,11 +23,25 @@ struct QuizBrain {
         Question(text: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", answer: "True")
     ]
     
+    let multiQuiz = [
+        QuestionMulti(text: "Which is the largest organ in the human body?", a: ["Heart", "Skin", "Large Intestine"], answer: "Skin"),
+        QuestionMulti(text: "Five dollars is worth how many nickels?", a: ["25", "50", "100"], answer: "100"),
+        QuestionMulti(text: "What do the letters in the GMT time zone stand for?", a: ["Global Meridian Time", "Greenwich Mean Time", "General Median Time"], answer: "Greenwich Mean Time"),
+        QuestionMulti(text: "What is the French word for 'hat'?", a: ["Chapeau", "Écharpe", "Bonnet"], answer: "Chapeau"),
+        QuestionMulti(text: "In past times, what would a gentleman keep in his fob pocket?", a: ["Notebook", "Handkerchief", "Watch"], answer: "Watch"),
+        QuestionMulti(text: "How would one say goodbye in Spanish?", a: ["Au Revoir", "Adiós", "Salir"], answer: "Adiós"),
+        QuestionMulti(text: "Which of these colours is NOT featured in the logo for Google?", a: ["Green", "Orange", "Blue"], answer: "Orange"),
+        QuestionMulti(text: "What alcoholic drink is made from molasses?", a: ["Rum", "Whisky", "Gin"], answer: "Rum"),
+        QuestionMulti(text: "What type of animal was Harambe?", a: ["Panda", "Gorilla", "Crocodile"], answer: "Gorilla"),
+        QuestionMulti(text: "Where is Tasmania located?", a: ["Indonesia", "Australia", "Scotland"], answer: "Australia")
+    ]
+    
     var questionNumber = 0
     var score = 0
+    var isMultiAnswerQuiz = false
     
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
-        if userAnswer == quiz[questionNumber].answer {
+        if userAnswer == getQuestionAnswer() {
             score += 1
             return true
         } else {
@@ -35,24 +49,55 @@ struct QuizBrain {
         }
     }
     
+    func getQuestionAnswer() -> String{
+        if isMultiAnswerQuiz {
+            return multiQuiz[questionNumber].answer
+        }
+        return quiz[questionNumber].answer
+    }
+    
     func getQuestionText() -> String {
+        if isMultiAnswerQuiz {
+            return multiQuiz[questionNumber].text
+        }
         return quiz[questionNumber].text
     }
     
     func getProgress() -> Float {
-        return Float(questionNumber + 1) / Float(quiz.count)
+        return Float(questionNumber + 1) / Float(getCurrentQuizCount())
     }
     
     func getScore() -> Int {
         return score
     }
     
+    func isMultiAnswerQuizTypeSelected() -> Bool {
+        return isMultiAnswerQuiz
+    }
+    
+    mutating func changeQuizType(_ isMultiAnswer: Bool) {
+        isMultiAnswerQuiz = isMultiAnswer
+        score = 0
+        questionNumber = 0
+    }
+    
     mutating func nextQuestion() {
-        if(questionNumber < quiz.count - 1) {
+        if(questionNumber < getCurrentQuizCount() - 1) {
             questionNumber += 1
         } else {
             questionNumber = 0
             score = 0
         }
+    }
+    
+    func getCurrentQuizCount() -> Int {
+        if isMultiAnswerQuiz {
+            return multiQuiz.count
+        }
+        return quiz.count
+    }
+    
+    func getPossibleAnswers() -> [String] {
+        return multiQuiz[questionNumber].a
     }
 }

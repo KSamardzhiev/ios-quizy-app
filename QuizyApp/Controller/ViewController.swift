@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
-    
+    @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     var quizBrain = QuizBrain()
     
@@ -50,6 +50,17 @@ class ViewController: UIViewController {
         updateUI()
     }
 
+    @IBAction func segmentChange(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 1 {
+            thirdButton.isHidden = false
+            quizBrain.changeQuizType(true)
+            updateUI()
+        } else {
+            thirdButton.isHidden = true
+            quizBrain.changeQuizType(false)
+            updateUI()
+        }
+    }
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         let userAnswer = (sender.titleLabel?.text!)!
         
@@ -72,6 +83,17 @@ class ViewController: UIViewController {
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        thirdButton.backgroundColor = UIColor.clear
+        
+        if quizBrain.isMultiAnswerQuizTypeSelected() {
+            let answers = quizBrain.getPossibleAnswers()
+            trueButton.setTitle(answers[0], for: .normal)
+            falseButton.setTitle(answers[1], for: .normal)
+            thirdButton.setTitle(answers[2], for: .normal)
+        } else {
+            trueButton.setTitle("True", for: .normal)
+            falseButton.setTitle("False", for: .normal)
+        }
         
     }
     
