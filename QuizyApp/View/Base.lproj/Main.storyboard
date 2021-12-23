@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,63 +13,67 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="kmx-uJ-tt3">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ygB-j6-6xe">
-                                <rect key="frame" x="54" y="0.0" width="788" height="393"/>
+                                <rect key="frame" x="10" y="44" width="394" height="818"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v7r-aZ-qZQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="788" height="253"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is test question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-Cd-DrX">
-                                                <rect key="frame" x="10" y="0.0" width="778" height="253"/>
-                                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="40"/>
-                                                <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ZRD-Cd-DrX" secondAttribute="trailing" id="0St-Ob-jlt"/>
-                                            <constraint firstItem="ZRD-Cd-DrX" firstAttribute="centerY" secondItem="v7r-aZ-qZQ" secondAttribute="centerY" id="V2t-y7-Lqo"/>
-                                            <constraint firstItem="ZRD-Cd-DrX" firstAttribute="leading" secondItem="v7r-aZ-qZQ" secondAttribute="leading" constant="10" id="chj-oK-Ims"/>
-                                            <constraint firstAttribute="bottom" secondItem="ZRD-Cd-DrX" secondAttribute="bottom" id="lc4-eh-KjC"/>
-                                            <constraint firstItem="ZRD-Cd-DrX" firstAttribute="top" secondItem="v7r-aZ-qZQ" secondAttribute="top" id="qaN-8e-vc1"/>
-                                        </constraints>
-                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBP-0R-ehv">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="62.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is test question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRD-Cd-DrX">
+                                        <rect key="frame" x="0.0" y="72.5" width="394" height="575.5"/>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="40"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Syd-zH-rvf">
-                                        <rect key="frame" x="0.0" y="263" width="788" height="120"/>
+                                        <rect key="frame" x="0.0" y="658" width="394" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qke-6J-vQA">
-                                                <rect key="frame" x="0.0" y="0.0" width="788" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="njB-ne-RHh"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="True" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                    <color key="baseForegroundColor" red="0.85882352941176465" green="0.16078431372549018" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kfv-ia-f8E"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjp-Dz-VSi">
-                                                <rect key="frame" x="0.0" y="70" width="788" height="50"/>
+                                                <rect key="frame" x="0.0" y="70" width="394" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LlT-3t-0oV"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="gray" title="False" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                    <color key="baseForegroundColor" red="0.85882352941176465" green="0.16078431372549018" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCc-Ct-5QL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grS-dN-0rO">
-                                        <rect key="frame" x="0.0" y="393" width="788" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="788" width="394" height="30"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-VZ-qb4">
-                                                <rect key="frame" x="10" y="-0.5" width="768" height="2.5"/>
+                                                <rect key="frame" x="10" y="14.5" width="374" height="2.5"/>
+                                                <color key="tintColor" red="0.85882352941176465" green="0.16078431372549018" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="trackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </progressView>
                                         </subviews>
                                         <constraints>
@@ -95,6 +99,13 @@
                             <constraint firstItem="kmx-uJ-tt3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="x7D-La-J5a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="falseButton" destination="Zjp-Dz-VSi" id="quT-F3-c4i"/>
+                        <outlet property="progressBar" destination="4fo-VZ-qb4" id="Ptf-mH-2MU"/>
+                        <outlet property="questionLabel" destination="ZRD-Cd-DrX" id="b7m-Cc-ZHM"/>
+                        <outlet property="scoreLabel" destination="DBP-0R-ehv" id="T40-d1-gj9"/>
+                        <outlet property="trueButton" destination="Qke-6J-vQA" id="dzG-1B-iix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
